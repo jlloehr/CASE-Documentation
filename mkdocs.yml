@@ -1,13 +1,13 @@
 site_name: CASE Documentation
 nav:
   - Home: index.md
-  - CASE: CASE.md
-    - Examples:
-      - CASEsub/oresteia.md
-      - CASEsub/extractor.md
-      - CASEsub/file.md
-      - CASEsub/multipart.md
-      - CASEsub/reconstructed.md
+  - CASE:
+    - CASE.md
+    - CASEsub/oresteia.md
+    - CASEsub/extractor.md
+    - CASEsub/file.md
+    - CASEsub/multipart.md
+    - CASEsub/reconstructed.md
   - CASE-API-Python: api.md
   - CASE-Implementation-Volatility: volatility.md
   - CASE-Implementation-Plaso: plaso.md
