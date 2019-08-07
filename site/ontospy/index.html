@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>OntoSpy - CASE Documentation</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "OntoSpy";
+    var mkdocs_page_input_path = "ontospy.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> CASE Documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../CASE/">CASE</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../api/">CASE-API-Python</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../volatility/">CASE-Implementation-Volatility</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../plaso/">CASE-Implementation-Plaso</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../mappings/">CASE-Mappings</a>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="./">OntoSpy</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#cyber-investigation-analysis-standard-expression-case">Cyber-investigation Analysis Standard Expression (CASE)</a></li>
+    
+
+    <li class="toctree-l2"><a href="#ontospy">OntoSpy</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#description">Description</a></li>
+        
+            <li><a class="toctree-l3" href="#more-info">More info</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l2"><a href="#i-have-a-question">I have a question!</a></li>
+    
+
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../rdfdiff/">RDFDiff</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">CASE Documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>OntoSpy</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="cyber-investigation-analysis-standard-expression-case">Cyber-investigation Analysis Standard Expression (CASE)</h1>
+<p><em>Read the <a href="https://github.com/casework/CASE/wiki">CASE Wiki tab</a> to learn <strong>everything</strong> you need to know about the Cyber-investigation Analysis Standard Expression (CASE) ontology.</em>
+<em>For learning about the Unified Cyber Ontology, CASE's parent, see <a href="https://github.com/ucoProject/UCO">UCO</a>.</em></p>
+<h1 id="ontospy">OntoSpy</h1>
+<p><strong><em>Note: OntoSpy was forked so that a static version of the tool could be obtained. The Python API's autogeneration relies on this static version for parsing purposes (v0.1.0). In the future if this fork is to be updated from the original lambdamusic repository it may require updating the scripts. Thus, when using OntoSpy for mapping or ontological purposes we suggest using the original repository.</em></strong></p>
+<p>Python toolkit for inspecting linked data knowledge models AKA ontologies or vocabularies.</p>
+<h3 id="description">Description</h3>
+<p>OntoSpy is a lightweight Python library and command line tool for inspecting and visualizing vocabularies encoded using W3C Semantic Web standards, that is, RDF or any of its dialects (RDFS, OWL, SKOS).</p>
+<p>The basic workflow is simple: load a graph by instantiating the <code>Ontospy</code> class with a file containing RDFS, OWL or SKOS definitions. You get back an object that lets you interrogate the ontology. That's all!</p>
+<p>The same functionalities are accessible also via a command line application (<code>ontospy-shell</code>). This is an interactive environment (like a repl) that allows to load ontologies from a local repository, interrogate them and cache them so that they can be quickly reloaded for inspection later on.</p>
+<h3 id="more-info">More info</h3>
+<p>https://github.com/lambdamusic/OntoSpy/wiki</p>
+<h1 id="i-have-a-question">I have a question!</h1>
+<p>Before you post a Github issue or send an email ensure you've done this checklist:</p>
+<ol>
+<li>
+<p><a href="https://caseontology.org/ontology/start.html#scope">Determined scope</a> of your task. It is not necessary for most parties to understand all aspects of the ontology, mapping methods, and supporting tools.</p>
+</li>
+<li>
+<p>Familiarize yourself with the <a href="https://github.com/casework/Ontospy/labels">labels</a> and search the <a href="https://github.com/casework/Ontospy/issues">Issues tab</a>. Typically, only light-blue and red labels should be used by non-admin Github users while the others should be used by CASE Github admins.
+<em>All but the red <code>Project</code> labels are found in every <a href="https://github.com/casework"><code>casework</code></a> repository.</em></p>
+</li>
+<li>
+<p>This repository is a "preserved" fork that is used for backend autogeneration, etc. All feature/bug requests for the core functionality of the tool should be reported to the original repository. However, if it is something that is specific to CASE we <em>may</em> add support a patch here.</p>
+</li>
+</ol>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../rdfdiff/" class="btn btn-neutral float-right" title="RDFDiff">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../mappings/" class="btn btn-neutral" title="CASE-Mappings"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../mappings/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../rdfdiff/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+
+</body>
+</html>

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>CASE-API-Python - CASE Documentation</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "CASE-API-Python";
+    var mkdocs_page_input_path = "api.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> CASE Documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../CASE/">CASE</a>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="./">CASE-API-Python</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#cyber-investigation-analysis-standard-expression-case">Cyber-investigation Analysis Standard Expression (CASE)</a></li>
+    
+
+    <li class="toctree-l2"><a href="#case-python-api">CASE Python API</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#quickstart">Quickstart</a></li>
+        
+            <li><a class="toctree-l3" href="#nlgpy-casepy">NLG.py &amp; CASE.py</a></li>
+        
+            <li><a class="toctree-l3" href="#examples">Examples</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l2"><a href="#nlg-autogeneration-only-for-case-team-to-manage-api">NLG Autogeneration (only for CASE team to manage API)</a></li>
+    
+
+    <li class="toctree-l2"><a href="#i-have-a-question">I have a question!</a></li>
+    
+
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../volatility/">CASE-Implementation-Volatility</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../plaso/">CASE-Implementation-Plaso</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../mappings/">CASE-Mappings</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../ontospy/">OntoSpy</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../rdfdiff/">RDFDiff</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">CASE Documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>CASE-API-Python</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="cyber-investigation-analysis-standard-expression-case">Cyber-investigation Analysis Standard Expression (CASE)</h1>
+<p><em>Read the <a href="https://github.com/casework/CASE/wiki">CASE Wiki tab</a> to learn <strong>everything</strong> you need to know about the Cyber-investigation Analysis Standard Expression (CASE) ontology.</em>
+<em>For learning about the Unified Cyber Ontology, CASE's parent, see <a href="https://github.com/ucoProject/UCO">UCO</a>.</em></p>
+<h1 id="case-python-api">CASE Python API</h1>
+<h3 id="quickstart">Quickstart</h3>
+<ol>
+<li><code>python setup.py install</code></li>
+<li>Import <code>case.py</code> and <code>NLG.py</code> into the file you plan to implement CASE.</li>
+</ol>
+<h3 id="nlgpy-casepy">NLG.py &amp; CASE.py</h3>
+<p>The Natural Language Glossary (NLG) is an alphabetical list of types of CASE classes (categories of CASE types).
+The functions in <code>NLG.py</code> create CASE objects (instances of such types) while automatically checking ontology and type.
+The API (<code>case.py</code>) could be used directly to create non-typed objects if ontology and type checking are not requirements.
+However, we advise against this to maintain consistency across community usage of the ontology.</p>
+<p>Note that different versions of the NLG exist for different realizations of the Unified Cyber Ontology.
+The human legible NLG corresponding to this version of CASE (one realization of UCO) can be found here:
+https://casework.github.io/case/case-v0.1.0-natural-language-glossary.html</p>
+<p>The API wraps <a href="https://rdflib.readthedocs.io/en/stable/">RDFLib</a> for a JSON-LD
+schematic. This verison is only directly adoptable via Python but JSON-LD is also supported in Javascript, PHP, Ruby, Java, C#, and Go.</p>
+<h3 id="examples">Examples</h3>
+<p>The <code>example</code> folder contains a slimmed down NLG, for an understanding of some of the basic function variations that exist, as well as a template for all types of conditions checked by the NLG functions.</p>
+<h1 id="nlg-autogeneration-only-for-case-team-to-manage-api">NLG Autogeneration (only for CASE team to manage API)</h1>
+<p><em>Note that currently the script will not function properly because v0.1.0 of CASE does not have a cardinality field for each object and property. When this is added the script will be stable and new_NLG.py in the outputs folder will not have missing body checks.</em></p>
+<p>Dependency: <a href="https://github.com/casework/Ontospy">Ontospy</a></p>
+<p>When CASE's base specification (Turtle files) changes this script can be used to automatically regenerate the NLG.py functions for the next release. Therefore, this should only be run by the CASE team - eventually it will move to a new (possibly backend) repo where a CI/CD framework is placed.</p>
+<p>To run Ontospy must be installed, and the Turtle files combined into one.
+Then run <code>python autogen-api.py &lt;path-to-turtle-file&gt;</code>.
+(Note there is a ToDo list in the <code>autogen-api.py</code> file so that it can align with changes that may occur in the API, as well as other add new features such as better CLI flags, a CSV export of all object names and properties for the Ontologists and Mappers teams to use for quick reference, etc.)</p>
+<h1 id="i-have-a-question">I have a question!</h1>
+<p>Before you post a Github issue or send an email ensure you've done this checklist:</p>
+<ol>
+<li>
+<p><a href="https://caseontology.org/ontology/start.html#scope">Determined scope</a> of your task. It is not necessary for most parties to understand all aspects of the ontology, mapping methods, and supporting tools.</p>
+</li>
+<li>
+<p>Familiarize yourself with the <a href="https://github.com/casework/CASE-API-Python/labels">labels</a> and search the <a href="https://github.com/casework/CASE-API-Python/issues">Issues tab</a>. Typically, only light-blue and red labels should be used by non-admin Github users while the others should be used by CASE Github admins.
+<em>All but the red <code>Project</code> labels are found in every <a href="https://github.com/casework"><code>casework</code></a> repository.</em></p>
+</li>
+</ol>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../volatility/" class="btn btn-neutral float-right" title="CASE-Implementation-Volatility">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../CASE/" class="btn btn-neutral" title="CASE"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../CASE/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../volatility/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+
+</body>
+</html>

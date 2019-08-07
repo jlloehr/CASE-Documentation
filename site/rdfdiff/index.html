@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>RDFDiff - CASE Documentation</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "RDFDiff";
+    var mkdocs_page_input_path = "rdfdiff.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> CASE Documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../CASE/">CASE</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../api/">CASE-API-Python</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../volatility/">CASE-Implementation-Volatility</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../plaso/">CASE-Implementation-Plaso</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../mappings/">CASE-Mappings</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../ontospy/">OntoSpy</a>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="./">RDFDiff</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#cyber-investigation-analysis-standard-expression-case">Cyber-investigation Analysis Standard Expression (CASE)</a></li>
+    
+
+    <li class="toctree-l2"><a href="#rdfdiff">RDFDiff</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#what-it-does">What it does</a></li>
+        
+            <li><a class="toctree-l3" href="#how-it-works">How it works</a></li>
+        
+            <li><a class="toctree-l3" href="#why-not-sparql">Why not SPARQL?</a></li>
+        
+            <li><a class="toctree-l3" href="#installation">Installation</a></li>
+        
+            <li><a class="toctree-l3" href="#unit-tests">Unit Tests</a></li>
+        
+            <li><a class="toctree-l3" href="#cli-usage">CLI Usage</a></li>
+        
+            <li><a class="toctree-l3" href="#cli-example">CLI Example</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l2"><a href="#i-have-a-question">I have a question!</a></li>
+    
+
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">CASE Documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>RDFDiff</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="cyber-investigation-analysis-standard-expression-case">Cyber-investigation Analysis Standard Expression (CASE)</h1>
+<p><em>Read the <a href="https://github.com/casework/CASE/wiki">CASE Wiki tab</a> to learn <strong>everything</strong> you need to know about the Cyber-investigation Analysis Standard Expression (CASE) ontology.</em>
+<em>For learning about the Unified Cyber Ontology, CASE's parent, see <a href="https://github.com/ucoProject/UCO">UCO</a>.</em></p>
+<h1 id="rdfdiff">RDFDiff</h1>
+<p>An RDF and ontology trouble shooter for CASE and UCO.</p>
+<h3 id="what-it-does">What it does</h3>
+<p>RDFDiff takes output of a tool (JSON/JSON-LD/XML/etc...)
+and attempts to validate it against a RDF based ontology (OWL/N3/ttl).
+Any entry in the tool's output that is NOT in the Ontology (specified via CLI)
+will display an error. CLI arugments can be added to cause a debugger to start
+so you may explore the graph to view where things went wrong.</p>
+<h3 id="how-it-works">How it works</h3>
+<p>rdfdiff.py will read in an RDF vocabulary defined via <code>-g</code> (glossary) to
+check a custom tool's output against via <code>-i</code>. The Python library rdflib 
+is used to turn the RDF schema into tripples which are then broken into three
+lists; 
+subject, predicate and object. Finally, each element of the tools ouput within
+the tool's subject and predicate are checked againast the glossary's subject 
+and predicate to confirm the existence of these RDF elements. If an element is 
+found or not found it is displayed to the user. BNodes are skipped  as they
+have no appropriate label in RDF and should not be used to verify an ontology.</p>
+<h3 id="why-not-sparql">Why not SPARQL?</h3>
+<p>In order to facilitate a broad range of ontologies and custom tool outputs,
+SPARQL queries are not used for verification. CASE and UCO allow for robust
+flexibility and this tool  aims to compliment this approach.</p>
+<h3 id="installation">Installation</h3>
+<pre><code>sudo pip install -r requirements.txt 
+</code></pre>
+
+<h3 id="unit-tests">Unit Tests</h3>
+<p>The ontology validator
+is heavily reliant on 3rd pary libraries, primarily RDFlib.
+RDFLib is under heavy development. To ensure compatability with new releases
+unit tests have been written to check for consistency.</p>
+<p>Run unit tests:</p>
+<pre><code>cd tests;
+python test_verifier.py;
+</code></pre>
+
+<h3 id="cli-usage">CLI Usage</h3>
+<ul>
+<li><code>-g</code>: Define the RDF schema (aka glossary) in use for your ontology.</li>
+<li>
+<p><code>-gf</code>: Define the format the schema is in. By default validator.py
+will try to auto-guess based on extension. However, if additional plugins are
+installed it is best practice to manually specify it.</p>
+</li>
+<li>
+<p><code>-i</code>: The external tool's output you want to verify the ontology 
+against.</p>
+</li>
+<li>
+<p><code>-if</code>: Define RDF schema for tool data that's being injested.</p>
+</li>
+<li><code>--debug</code>: Break on errors that occur within <code>--verify</code>.</li>
+<li><code>-tg</code>: Print subject, predicate, object for each graph within tool schema.</li>
+<li><code>-gg</code>: Print subject, predicate, object for each graph within glossary</li>
+<li>schema.</li>
+</ul>
+<h3 id="cli-example">CLI Example</h3>
+<ul>
+<li>Check for inconsistencies between graphs:</li>
+</ul>
+<pre><code>rdfdiff.py -g case.ttl -gf turtle -i output.json-ld -if json-ld --verify=1
+</code></pre>
+
+<ul>
+<li>Check for inconsistencies between graphs with color output:</li>
+</ul>
+<pre><code>rdfdiff.py -g case.ttl -gf turtle -i output.json-ld -if json-ld --verify=1
+--color=1
+</code></pre>
+
+<ul>
+<li>Enter debug mode. This will cause a PDB session to open when an inconsistency</li>
+<li>is met. This can be useful for manually navigating the RDF graph in Python.:</li>
+</ul>
+<pre><code>rdfdiff.py -g case.ttl -gf turtle -i output.json-ld -if json-ld --verify=1
+--debug=1
+
+</code></pre>
+
+<ul>
+<li>Print all graphs for tool's schema.</li>
+</ul>
+<pre><code>rdfdiff.py -g case.ttl -gf turtle -i output.json-ld -if json-ld -tg=1
+</code></pre>
+
+<ul>
+<li>Print all graphs for ontology's schema.</li>
+</ul>
+<pre><code>rdfdiff.py -g case.ttl -gf turtle -i output.json-ld -if json-ld -gg=1
+</code></pre>
+
+<h1 id="i-have-a-question">I have a question!</h1>
+<p>Before you post a Github issue or send an email ensure you've done this checklist:</p>
+<ol>
+<li>
+<p><a href="https://caseontology.org/ontology/start.html#scope">Determined scope</a> of your task. It is not necessary for most parties to understand all aspects of the ontology, mapping methods, and supporting tools.</p>
+</li>
+<li>
+<p>Familiarize yourself with the <a href="https://github.com/casework/RDFDiff/labels">labels</a> and search the <a href="https://github.com/casework/RDFDiff/issues">Issues tab</a>. Typically, only light-blue and red labels should be used by non-admin Github users while the others should be used by CASE Github admins.
+<em>All but the red <code>Project</code> labels are found in every <a href="https://github.com/casework"><code>casework</code></a> repository.</em></p>
+</li>
+<li>
+<p>If/when you run into an issue with a given RDF schema format or the verifier.py script, please open an issue with the error and as much technical detail as you can provide.</p>
+</li>
+</ol>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../ontospy/" class="btn btn-neutral" title="OntoSpy"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../ontospy/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+
+</body>
+</html>
