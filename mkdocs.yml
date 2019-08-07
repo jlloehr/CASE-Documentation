@@ -1,8 +1,8 @@
 site_name: CASE Documentation
 nav:
-  - Home: 'index.md'
+  - Home: index.md
   - CASE: CASE.md
-    - 'Examples':
+    - Examples:
       - CASEsub/oresteia.md
       - CASEsub/extractor.md
       - CASEsub/file.md
