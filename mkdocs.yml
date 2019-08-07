@@ -11,7 +11,8 @@ nav:
   - CASE-API-Python: api.md
   - CASE-Implementation-Volatility: volatility.md
   - CASE-Implementation-Plaso: plaso.md
-  - CASE-Mappings: mappings.md
+  - CASE-Mappings:
+    - mappings.md
     - mappings/bulkmap.md
     - mappings/cellibrite.md
     - mappings/nsrl.md
